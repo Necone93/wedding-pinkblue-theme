@@ -7,22 +7,6 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
-.hanging-flowers-left {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    max-width: 200px;
-    opacity: 0.5;
-}
-.hanging-flowers-right {
-    position: fixed;
-    z-index: 20;
-    top: 0;
-    right: 0;
-    max-width: 200px;
-    opacity: 0.5;
-}
 .slika-para {
     max-width: 300px;
     height: auto;
