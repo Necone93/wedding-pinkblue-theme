@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("../assets/blue_smoke_square_2048.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.hanging-flowers-left {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    max-width: 200px;
+    opacity: 0.5;
+}
+.hanging-flowers-right {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    max-width: 200px;
+    opacity: 0.5;
+}
+.slika-para {
+    max-width: 300px;
+    height: auto;
+    width: auto;
+}
+.prvitekst {
+    font-family: 'Alex Brush';
+    color: rgb(80, 117, 144);
+    
+    font-size: 3rem;
+    z-index: 21;
+    font-weight: 900;
+}
+.okrugla-slika {
+    max-width: 460px;
+    position: relative;
+    margin: 0 auto;
+}
+.okrugla-slika img {
+      width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.imepara {
+    font-family: 'Playfair Display';
+    color: rgb(229, 156, 168);
+    text-shadow: 3px 3px 3px black;
+    font-size: 3rem;
+    position: absolute;
+      top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.datum-svadbe {
+    color: rgb(80, 117, 144);
+    font-family: 'Lato';
+}
+#timer {
+    font-size: 1.5rem;
+    color: #ff9cb3;
+    font-weight: bold;
+}
+#pozivnica {
+    width: 100%;
+    height: 20rem;
+    background-color: rgb(80, 117, 144);
+    position: relative;
+}
+#pozivnica p {
+    z-index: 10;
+    text-shadow: 3px 3px 5px black;
+}
+.cvet1 {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    max-width: 100px;
+    z-index: 9;
+    animation-delay: 0s;
+}
+.cvet2 {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    max-width: 100px;
+    z-index: 9;
+    animation-delay: 2s;
+}
+.cvet3 {
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+    max-width: 100px;
+    z-index: 9;
+    animation-delay: 3s;
+}
+.cvet {
+  opacity: 0;
+  animation: fadeCvetići 4s infinite;
+}
+
+@keyframes fadeCvetići {
+  0% { opacity: 0; transform: scale(0.8);}
+  10% { opacity: 0.3; transform: scale(1);}
+  40% { opacity: 0.5; transform: scale(0.9);}
+  50% { opacity: 0.3; transform: scale(0.8);}
+  100% { opacity: 0; transform: scale(0.5);}
+}
+.drugitekst {
+       font-size: 2.5rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-family: "Alex Brush", cursive;
+    font-weight: 100;
+    text-align: center;
+    color: #ff96ae;
+}
+.box {
+    background-color: rgba(229, 156, 168, 0.4);
+    border-radius: 10px;
+}
+.forma form {
+    background-color: rgba(255, 255, 255, 0.504);
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+}
+form textarea {
+  width: 50%;
+}
+form {
+    position: relative;
+    font-family: 'Playfair Display';
+}
+.btn {
+      background-color: #ff9cb3;      /* zlatna boja */
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.input-line {
+    width: 50%;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    padding: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+.flowers-forma {
+    position: absolute;
+    max-width: 300px;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+}
