@@ -12,34 +12,6 @@ body {
     height: auto;
     width: auto;
 }
-.prvitekst {
-    font-family: 'Alex Brush';
-    color: rgb(80, 117, 144);
-    
-    font-size: 3rem;
-    z-index: 21;
-    font-weight: 900;
-}
-.okrugla-slika {
-    max-width: 460px;
-    position: relative;
-    margin: 0 auto;
-}
-.okrugla-slika img {
-      width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.imepara {
-    font-family: 'Playfair Display';
-    color: rgb(229, 156, 168);
-    text-shadow: 3px 3px 3px black;
-    font-size: 3rem;
-    position: absolute;
-      top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .datum-svadbe {
     color: rgb(80, 117, 144);
     font-family: 'Lato';
@@ -99,7 +71,7 @@ body {
        font-size: 2.5rem;
     max-width: 100%;
     word-wrap: break-word;
-    font-family: "Alex Brush", cursive;
+    font-family: "Great Vibes", cursive;
     font-weight: 100;
     text-align: center;
     color: #ff96ae;
@@ -146,4 +118,139 @@ form {
     top: 0;
     right: 0;
     opacity: 0.5;
+}
+/* HERO */
+.okrugla-slika{ max-width:460px; position:relative; margin:0 auto; }
+.okrugla-slika img{ width:100%; height:auto; object-fit:cover; display:block; }
+.imepara{
+  font-family:'Great Vibes', serif;
+  color: rgb(80, 117, 144);                 /* pink */
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);    /* blaža senka od crne */
+  font-size: 2.5rem;
+  position:absolute; top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  line-height:1.1; text-align:center; font-weight:700;
+}
+
+/* POZIVNICA ostaje kao kod tebe */
+
+/* ORGANIZACIJA – 3 boxa u jednom redu na desktopu */
+.box{
+  background-color: rgba(229,156,168,0.40); /* tvoj pastel pink */
+  border-radius: 10px;
+  color: #163042; /* taman plavo-siva, čitljivost */
+  padding-inline: 1rem;
+}
+.box h1, .box h3, .box p{ color:#163042; }
+
+/* Ikonica u boxu (dodaćeš slike naknadno) */
+.org-ikonica{
+  display:block;
+  width: clamp(52px, 12vw, 84px);
+  height:auto;
+  object-fit:contain;
+  margin: 0 auto .5rem;
+}
+
+/* Link "Pogledaj na mapi" – da ne izgleda kao običan link */
+.map-link{
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ff96ae;                           /* pink */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,150,174,.55);
+  padding-bottom: 2px;
+  transition: color .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.map-link:hover{
+  color: #e67e99;
+  border-color: currentColor;
+  opacity: .95;
+}
+
+/* Strelica red poravnanje */
+.strelica-tekst{ margin-bottom:.25rem; }
+
+/* RESPONSIVE finese */
+@media (max-width: 575.98px){
+  .slika-para{ max-width: 280px; }
+}
+/* ===== Intro overlay: Pink & Blue ===== */
+.intro-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;          /* čista bela */
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  opacity: 1;
+}
+.intro-overlay.is-done{
+  transition: opacity .6s ease, visibility .6s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.intro-inner{ text-align: center; }
+
+/* Tema boje */
+.intro-overlay.pastel{
+  --pink: #ff96ae;              /* tvoja pink */
+  --blue: #507590;              /* tvoja plava (80,117,144) */
+}
+
+/* Ime para – gradient tekst + blagi glow + reveal */
+.intro-title{
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 1.08;
+  margin: 0 0 .25rem;
+
+  /* gradient tekst */
+  background: linear-gradient(120deg, var(--pink), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* animacije */
+  background-size: 200% 200%;
+  animation:
+    introReveal .7s ease-out both,
+    gradientSlide 4s ease-in-out .2s infinite alternate,
+    introGlow 1.6s ease-in-out .4s both;
+}
+
+/* Podnaslov */
+.intro-sub{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  letter-spacing: .04em;
+  color: var(--blue);
+  opacity: .9;
+  margin: 0;
+  animation: introReveal .7s ease-out .15s both;
+}
+
+/* Keyframes */
+@keyframes introReveal{
+  from{ opacity: 0; transform: translateY(8px); filter: blur(2px); }
+  to  { opacity: 1; transform: translateY(0);   filter: blur(0); }
+}
+@keyframes gradientSlide{
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+/* diskretan sjaj koji nestaje */
+@keyframes introGlow{
+  0%  { text-shadow: 0 0 0 rgba(255,150,174,0), 0 0 0 rgba(80,117,144,0); }
+  35% { text-shadow: 0 0 14px rgba(255,150,174,.25), 0 0 10px rgba(80,117,144,.2); }
+  100%{ text-shadow: 0 0 0 rgba(255,150,174,0), 0 0 0 rgba(80,117,144,0); }
+}
+
+/* Poštuj prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  .intro-title, .intro-sub{ animation: none; }
 }
