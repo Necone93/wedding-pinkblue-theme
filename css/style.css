@@ -95,7 +95,7 @@ form {
     font-family: 'Playfair Display';
 }
 .btn {
-      background-color: #ff9cb3;      /* zlatna boja */
+      background-color: #ff9cb3;     
   color: white;
   border: none;
   font-weight: bold;
@@ -124,17 +124,17 @@ form {
 .okrugla-slika img{ width:100%; height:auto; object-fit:cover; display:block; }
 .imepara{
   font-family:'Great Vibes', serif;
-  color: rgb(80, 117, 144);                 /* pink */
-  text-shadow: 0 1px 0 rgba(0,0,0,.25);    /* blaža senka od crne */
+  color: rgb(80, 117, 144);                 
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);    
   font-size: 2.5rem;
   position:absolute; top:50%; left:50%;
   transform: translate(-50%, -50%);
   line-height:1.1; text-align:center; font-weight:700;
 }
 
-/* POZIVNICA ostaje kao kod tebe */
 
-/* ORGANIZACIJA – 3 boxa u jednom redu na desktopu */
+
+/* ORGANIZACIJA */
 .box{
   background-color: rgba(229,156,168,0.40); /* tvoj pastel pink */
   border-radius: 10px;
@@ -143,7 +143,7 @@ form {
 }
 .box h1, .box h3, .box p{ color:#163042; }
 
-/* Ikonica u boxu (dodaćeš slike naknadno) */
+/* Ikonica u boxu  */
 .org-ikonica{
   display:block;
   width: clamp(52px, 12vw, 84px);
@@ -152,12 +152,12 @@ form {
   margin: 0 auto .5rem;
 }
 
-/* Link "Pogledaj na mapi" – da ne izgleda kao običan link */
+
 .map-link{
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: 1rem;
-  color: #ff96ae;                           /* pink */
+  color: #ff96ae;                      
   text-decoration: none;
   border-bottom: 1px solid rgba(255,150,174,.55);
   padding-bottom: 2px;
@@ -169,14 +169,14 @@ form {
   opacity: .95;
 }
 
-/* Strelica red poravnanje */
+
 .strelica-tekst{ margin-bottom:.25rem; }
 
-/* RESPONSIVE finese */
+
 @media (max-width: 575.98px){
   .slika-para{ max-width: 280px; }
 }
-/* ===== Intro overlay: Pink & Blue ===== */
+
 .intro-overlay{
   position: fixed;
   inset: 0;
@@ -197,11 +197,11 @@ form {
 
 /* Tema boje */
 .intro-overlay.pastel{
-  --pink: #ff96ae;              /* tvoja pink */
-  --blue: #507590;              /* tvoja plava (80,117,144) */
+  --pink: #ff96ae;           
+  --blue: #507590;              
 }
 
-/* Ime para – gradient tekst + blagi glow + reveal */
+
 .intro-title{
   font-family: 'Alex Brush', 'Great Vibes', cursive;
   font-weight: 400;
@@ -209,7 +209,7 @@ form {
   line-height: 1.08;
   margin: 0 0 .25rem;
 
-  /* gradient tekst */
+
   background: linear-gradient(120deg, var(--pink), var(--blue));
   -webkit-background-clip: text;
   background-clip: text;
@@ -223,7 +223,7 @@ form {
     introGlow 1.6s ease-in-out .4s both;
 }
 
-/* Podnaslov */
+
 .intro-sub{
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.05rem, 2.4vw, 1.35rem);
@@ -234,7 +234,7 @@ form {
   animation: introReveal .7s ease-out .15s both;
 }
 
-/* Keyframes */
+
 @keyframes introReveal{
   from{ opacity: 0; transform: translateY(8px); filter: blur(2px); }
   to  { opacity: 1; transform: translateY(0);   filter: blur(0); }
@@ -243,14 +243,14 @@ form {
   0%   { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
-/* diskretan sjaj koji nestaje */
+
 @keyframes introGlow{
   0%  { text-shadow: 0 0 0 rgba(255,150,174,0), 0 0 0 rgba(80,117,144,0); }
   35% { text-shadow: 0 0 14px rgba(255,150,174,.25), 0 0 10px rgba(80,117,144,.2); }
   100%{ text-shadow: 0 0 0 rgba(255,150,174,0), 0 0 0 rgba(80,117,144,0); }
 }
 
-/* Poštuj prefers-reduced-motion */
+
 @media (prefers-reduced-motion: reduce){
   .intro-title, .intro-sub{ animation: none; }
 }
